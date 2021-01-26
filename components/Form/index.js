@@ -21,33 +21,6 @@ const Widget = styled.div`
     font-size: 14px;
     font-weight: 400;
     line-height: 1;
-    a {
-      color: inherit;
-      font-weight: 700;
-      display: initial;
-      padding: 0;
-    }
-  }
-  form,
-  input,
-  button,
-  a {
-    border: none;
-    width: 100%;
-    display: block;
-  }
-  a,
-  input,
-  button {
-    font-size: ${({ theme }) => theme.fontSize.small};
-    border-radius: ${({ theme }) => theme.borderRadius};
-    padding: ${({ theme }) => theme.spacing.small};
-  }
-  button {
-    font-weight: 900;
-    text-transform: uppercase;
-    color: ${({ theme }) => theme.colors.black};
-    cursor: pointer;
   }
 `;
 
@@ -57,7 +30,7 @@ Widget.Header = styled.header`
   align-items: center;
   padding: 18px 32px;
   background-color: ${({ theme }) => theme.colors.primary};
-  color: ${({ theme }) => theme.colors.black};
+
   * {
     margin: 0;
   }

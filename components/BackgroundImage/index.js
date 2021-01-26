@@ -27,7 +27,7 @@ const QuizBackground = styled.div`
       right: 0;
       z-index: 1;
     }
-    *:first-child {
+    *:first-child:not([class^="GitHubCorner"]) {
       position: relative;
       z-index: 10;
     }
