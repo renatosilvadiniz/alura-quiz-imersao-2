@@ -2,9 +2,9 @@
     "bg": "https://miro.medium.com/max/3840/1*BQD3aXhvDxoxzypeswvYOw.jpeg",
     "url": "https://alura-quiz-imersao-2.vercel.app/",
     "title": "Javascript Quiz",
-    "description": "Test how much you know about JS!",
-    "otherChallenges": "Good quizzes from this challenge",
-    "otherChallengesDescription": "Take a look in these quizzes, that people of Imersão Alura 2 Challenge did:",
+    "description": "Teste o quanto você conhece de JS!",
+    "otherChallenges": "Quizzes da Galera",
+    "otherChallengesDescription": "Dá uma olhada nesses quizzes incríveis que o pessoal da Imersão Alura 2 fizeram:",
     "questions": [
         {
             "image": "https://media.giphy.com/media/xUOxf3yDKCuwpOlT3i/giphy.gif",

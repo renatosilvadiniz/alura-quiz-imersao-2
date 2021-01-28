@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 import styled from "styled-components";
 
 const Widget = styled.div`
@@ -21,33 +23,46 @@ const Widget = styled.div`
     font-size: 14px;
     font-weight: 400;
     line-height: 1;
-    a {
-      color: inherit;
-      font-weight: 700;
-      display: initial;
-      padding: 0;
-    }
   }
   form,
   input,
   button,
-  a {
+  a,
+  span {
     border: none;
     width: 100%;
     display: block;
   }
   a,
+  span,
   input,
   button {
     font-size: ${({ theme }) => theme.fontSize.small};
     border-radius: ${({ theme }) => theme.borderRadius};
     padding: ${({ theme }) => theme.spacing.small};
   }
-  button {
-    font-weight: 900;
-    text-transform: uppercase;
+  a {
+    background-color: ${({ theme }) => theme.colors.secondary};
     color: ${({ theme }) => theme.colors.black};
+  }
+  a,
+  span {
+    text-decoration: none;
+    margin-bottom: ${({ theme }) => theme.spacing.small};
+    &:last-child() {
+      margin-bottom: 0;
+    }
+  }
+  a,
+  span,
+  button:not(:disabled) {
     cursor: pointer;
+    &:hover {
+      opacity: 0.75;
+    }
+  }
+  .input_quiz {
+    display: none !important;
   }
 `;
 
@@ -76,5 +91,56 @@ Widget.Content = styled.div`
     padding: 0;
   }
 `;
+
+Widget.Quizzes = styled.a``;
+
+const Span = styled.span`
+  background-color: ${({ theme, status, choosed, index }) => {
+    if (choosed === index) {
+      if (status === "submit") return `${theme.colors.secondary}99`;
+      if (status === "success") return theme.colors.success;
+      if (status === "wrong") return theme.colors.wrong;
+    } else {
+      return theme.colors.secondary;
+    }
+  }};
+  color: ${({ theme, status, choosed, index }) => {
+    return status !== "submit" && choosed === index
+      ? theme.colors.contrastText
+      : theme.colors.black;
+  }};
+`;
+
+Widget.Quiz = ({
+  alternatives,
+  setIsDisabled,
+  status,
+  choosed,
+  setChoosed,
+}) => {
+  return alternatives.map((alternative, index) => {
+    return (
+      <label
+        key={index}
+        htmlFor={`id${index}`}
+        onClick={() => {
+          setIsDisabled(false);
+          setChoosed(index);
+        }}
+      >
+        <input
+          type="radio"
+          id={`id${index}`}
+          name="quiz"
+          className="input_quiz"
+          value={index}
+        />
+        <Span status={status} choosed={choosed} index={index}>
+          {alternative}
+        </Span>
+      </label>
+    );
+  });
+};
 
 export default Widget;

@@ -1,53 +1,36 @@
+/* eslint-disable */
+
 import styled from "styled-components";
+import { useState } from "react";
+import { useRouter } from "next/router";
+import Button from "../Button";
 
-const Widget = styled.div`
-  margin-top: 24px;
-  margin-bottom: 24px;
-  border: 1px solid ${({ theme }) => theme.colors.primary};
-  background-color: ${({ theme }) => {
-    return theme.colors.mainBg;
-  }};
-  border-radius: 4px;
-  overflow: hidden;
-  h1,
-  h2,
-  h3 {
-    font-size: 16px;
-    font-weight: 700;
-    line-height: 1;
-    margin-bottom: 0;
-  }
-  p {
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 1;
-  }
+const Input = styled.input`
+  margin: ${({ theme }) => theme.spacing.medium} 0;
 `;
 
-Widget.Header = styled.header`
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  padding: 18px 32px;
-  background-color: ${({ theme }) => theme.colors.primary};
+const Form = () => {
+  const router = useRouter();
+  const [name, setName] = useState("");
 
-  * {
-    margin: 0;
-  }
-`;
+  return (
+    <form
+      onSubmit={(event) => {
+        event.preventDefault();
+        router.push(`/quiz?name=${name}`);
+      }}
+    >
+      <Input
+        placeholder="Digite seu apelido"
+        onChange={(event) => {
+          setName(event.target.value);
+        }}
+      />
+      <Button disabled={name.length === 0} type="submit">
+        Bora Jogar{name.length > 0 ? " " + name : ""}?
+      </Button>
+    </form>
+  );
+};
 
-Widget.Content = styled.div`
-  padding: 24px 32px 32px 32px;
-  & > *:first-child {
-    margin-top: 0;
-  }
-  & > *:last-child {
-    margin-bottom: 0;
-  }
-  ul {
-    list-style: none;
-    padding: 0;
-  }
-`;
-
-export default Widget;
+export default Form;
