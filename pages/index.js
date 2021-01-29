@@ -12,7 +12,9 @@ import Form from "../components/Form";
 function Home() {
   return (
     <BackgroundImage backgroundImage={db.bg}>
-      <GitHubCorner />
+      <GitHubCorner
+        projectUrl={"https://github.com/renatosilvadiniz/alura-quiz-imersao-2"}
+      />
       <QuizContainer>
         <QuizLogo />
         <Widget>

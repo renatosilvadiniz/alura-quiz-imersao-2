@@ -9,6 +9,7 @@ import Questions from "../components/Quiz";
 import Loading from "../components/Loading";
 import Result from "../components/Result";
 import { useEffect, useState } from "react";
+import { useRouter } from "next/router";
 
 export default function Quiz() {
   const screenStates = {
@@ -19,10 +20,13 @@ export default function Quiz() {
   const [current, setCurrent] = useState(0);
   const [isFinished, setIsFinished] = useState(false);
   const [screenState, setScreenState] = useState(screenStates.loading);
+  const [results, setResults] = useState([]);
   const currentQuestion = db.questions[current];
   const currentQuestionIndex = current + 1;
   const totalQuestions = db.questions.length;
-  const handleSubmit = () => {
+  const player = useRouter().query.name;
+  const handleSubmit = (resposta) => {
+    setResults([...results, resposta]);
     if (currentQuestionIndex + 1 > totalQuestions) {
       setIsFinished(true);
     } else {
@@ -50,10 +54,13 @@ export default function Quiz() {
               questionIndex={currentQuestionIndex}
               totalQuestions={totalQuestions}
               nextQuestion={handleSubmit}
+              player={player}
             />
           )}
           {screenState === screenStates.loading && <Loading />}
-          {screenState === screenStates.result && <Result />}
+          {screenState === screenStates.result && (
+            <Result result={results} player={player} />
+          )}
         </Widget>
       </QuizContainer>
     </BackgroundImage>

@@ -21,6 +21,7 @@ const Form = () => {
       }}
     >
       <Input
+        maxLength={20}
         placeholder="Digite seu apelido"
         onChange={(event) => {
           setName(event.target.value);
