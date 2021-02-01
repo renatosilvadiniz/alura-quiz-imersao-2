@@ -7,7 +7,7 @@
     "otherChallengesDescription": "Teste seus conhecimentos com outros quizzes incríveis feitos durante a Imersão React Next.JS:",
     "questions": [
         {
-            "image": "https://media.giphy.com/media/xUOxf3yDKCuwpOlT3i/giphy.gif",
+            "image": "https://raw.githubusercontent.com/renatosilvadiniz/alura-quiz-imersao-2/main/_docs/q1.gif",
             "title": "Quem é considerado o idealizador do NEXT.JS?",
             "description": "Questão puxa saco do patrocinador rs.",
             "answer": 1,
@@ -18,9 +18,9 @@
             ]
         },
         {
-            "image": "https://media.giphy.com/media/xUOxf3yDKCuwpOlT3i/giphy.gif",
+            "image": "https://raw.githubusercontent.com/renatosilvadiniz/alura-quiz-imersao-2/main/_docs/q2.gif",
             "title": "O que é a Vercel?",
-            "description": "Mais uma! Prometo ser a última rs.",
+            "description": "Mais uma puxa-saco! Prometo ser a última rs.",
             "answer": 0,
             "alternatives": [
                 "Time que mantem o NEXT.JS",
@@ -29,7 +29,7 @@
             ]
         },
         {
-            "image": "https://media.giphy.com/media/13FrpeVH09Zrb2/giphy.gif",
+            "image": "https://raw.githubusercontent.com/renatosilvadiniz/alura-quiz-imersao-2/main/_docs/q3.gif",
             "title": "Qual a forma recomendada pela documentação, para criar uma App Next com apenas um comando:",
             "description": "Uma mão na roda!",
             "answer": 2,
@@ -40,7 +40,7 @@
             ]
         },
         {
-            "image": "https://media.giphy.com/media/13FrpeVH09Zrb2/giphy.gif",
+            "image": "https://raw.githubusercontent.com/renatosilvadiniz/alura-quiz-imersao-2/main/_docs/q4.gif",
             "title": "Como se nomeia um arquivo que irá usar parâmetros dinâmicos?",
             "description": "Vimos no final da aula 4 e por completo na aula 5.",
             "answer": 2,
@@ -51,7 +51,7 @@
             ]
         },
         {
-            "image": "https://media.giphy.com/media/13FrpeVH09Zrb2/giphy.gif",
+            "image": "https://raw.githubusercontent.com/renatosilvadiniz/alura-quiz-imersao-2/main/_docs/q5.gif",
             "title": "Se quisermos acrescentar coisas na tag head da nossa aplicação (como fontes e meta tags), qual arquivo devemos editar?",
             "description": "Um dos arquivos base dentro do next.",
             "answer": 1,
@@ -62,7 +62,7 @@
             ]
         },
         {
-            "image": "https://media.giphy.com/media/13FrpeVH09Zrb2/giphy.gif",
+            "image": "https://raw.githubusercontent.com/renatosilvadiniz/alura-quiz-imersao-2/main/_docs/q6.gif",
             "title": "Se chamarmos um console.log(), dentro da função auxiliar getServerSideProps do NEXTJS, de que lado o log ficará visível?",
             "description": "Importante!",
             "answer": 1,
@@ -73,9 +73,9 @@
             ]
         },
         {
-            "image": "https://media.giphy.com/media/13FrpeVH09Zrb2/giphy.gif",
+            "image": "https://raw.githubusercontent.com/renatosilvadiniz/alura-quiz-imersao-2/main/_docs/q7.gif",
             "title": "O server side rendering do NEXT.JS nos retorna um:",
-            "description": "Uma fácil para encerrar!",
+            "description": "Para encerrar!",
             "answer": 0,
             "alternatives": [
                 "HTML estático",
