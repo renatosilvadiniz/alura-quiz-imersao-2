@@ -41,7 +41,7 @@ export default function App({ Component, pageProps }) {
           rel="stylesheet"
         />
         {/* favicon */}
-        <link rel="shortcut icon" href="" />
+        <link rel="shortcut icon" href="https://raw.githubusercontent.com/renatosilvadiniz/alura-quiz-imersao-2/main/_docs/favicon.ico" />
         {/* <!-- Primary Meta Tags --> */}
         <title>{title}</title>
         <meta name="title" content={title} />
