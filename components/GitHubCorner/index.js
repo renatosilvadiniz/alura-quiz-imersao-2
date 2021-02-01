@@ -1,4 +1,5 @@
-// src/components/GitHubCorner/index.js
+/* eslint-disable */
+
 import React from "react";
 import styled from "styled-components";
 
@@ -11,7 +12,7 @@ const Wrapper = styled.div`
 `;
 
 const SVGWrapper = styled.svg`
-  fill: ${({ theme }) => theme.colors.wrong};
+  fill: ${({ theme }) => theme.colors.primary};
   color: ${({ theme }) => theme.colors.contrastText};
   cursor: pointer;
   &:hover .octo-arm {

@@ -15,7 +15,7 @@ const GlobalStyle = createGlobalStyle`
     /* New styles */
     display: flex;
     flex-direction: column;
-    font-family: 'Lato', sans-serif;
+    font-family: 'Open Sans', sans-serif;
     // Deixa branco no começo
     color: ${({ theme }) => theme.colors.contrastText};
   }
@@ -37,9 +37,11 @@ export default function App({ Component, pageProps }) {
       <Head>
         <link rel="preconnect" href="https://fonts.gstatic.com" />
         <link
-          href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700;800&display=swap"
           rel="stylesheet"
         />
+        {/* favicon */}
+        <link rel="shortcut icon" href="" />
         {/* <!-- Primary Meta Tags --> */}
         <title>{title}</title>
         <meta name="title" content={title} />

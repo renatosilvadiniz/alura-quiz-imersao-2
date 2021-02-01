@@ -47,7 +47,7 @@ export default function Questions({
   return (
     <>
       <Widget.Header>
-        <QuizBack src="https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-ios7-arrow-back-512.png" />
+        <QuizBack src="https://raw.githubusercontent.com/renatosilvadiniz/alura-quiz-imersao-2/main/_docs/arrow.webp" />
         <h1>{`Pergunta ${questionIndex} de ${totalQuestions}`}</h1>
       </Widget.Header>
       <QuizImage src={question.image} />

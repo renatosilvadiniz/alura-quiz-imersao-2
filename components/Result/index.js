@@ -21,7 +21,7 @@ export default function Result({ result }) {
   const totalQuestions = result.length;
   const hitTotal = result.filter((r) => r).length;
   const score = hitTotal * hitBonus;
-  const percent = (hitTotal * 100) / totalQuestions;
+  const percent = Math.floor((hitTotal * 100) / totalQuestions);
   const router = useRouter();
   const player = router.query.name ? ` ${router.query.name}` : "";
 

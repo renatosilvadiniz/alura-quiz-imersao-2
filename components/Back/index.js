@@ -5,7 +5,6 @@ import { useRouter } from "next/router";
 
 const QuizWrapper = styled.div`
   width: 40px;
-  background-color: ${({ theme }) => theme.colors.secondary};
   padding: ${({ theme }) => theme.spacing.small};
   margin-right: ${({ theme }) => theme.spacing.small};
   cursor: pointer;

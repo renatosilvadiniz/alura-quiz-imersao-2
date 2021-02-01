@@ -9,7 +9,7 @@ export default function Loading() {
       <Widget.Header>
         <h1>Carregando...</h1>
       </Widget.Header>
-      <Widget.Content style={{ "min-height": "250px", display: "flex" }}>
+      <Widget.Content style={{ minHeight: "250px", display: "flex" }}>
         <Loader />
       </Widget.Content>
     </>
