@@ -1,6 +1,7 @@
 /* eslint-disable */
 
 import styled from "styled-components";
+import Nextlink from "next/link";
 
 const Widget = styled.div`
   margin-top: 24px;
@@ -92,7 +93,13 @@ Widget.Content = styled.div`
   }
 `;
 
-Widget.Quizzes = styled.a``;
+Widget.Quizzes = ({ href, children }) => {
+  return (
+    <Nextlink href={href} passHref>
+      <a>{children}</a>
+    </Nextlink>
+  );
+};
 
 const Span = styled.span`
   background-color: ${({ theme, status, choosed, index }) => {

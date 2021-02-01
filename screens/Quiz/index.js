@@ -1,17 +1,15 @@
 /* eslint-disable */
 
-import db from "../db.json";
-import BackgroundImage from "../components/BackgroundImage";
-import QuizContainer from "../components/QuizContainer";
-import Widget from "../components/Widget";
-import QuizLogo from "../components/QuizLogo";
-import Questions from "../components/Quiz";
-import Loading from "../components/Loading";
-import Result from "../components/Result";
+import BackgroundImage from "../../components/BackgroundImage";
+import QuizContainer from "../../components/QuizContainer";
+import Widget from "../../components/Widget";
+import QuizLogo from "../../components/QuizLogo";
+import Questions from "../../components/Quiz";
+import Loading from "../../components/Loading";
+import Result from "../../components/Result";
 import { useEffect, useState } from "react";
-import { useRouter } from "next/router";
 
-export default function Quiz() {
+export default function Quiz({ data }) {
   const screenStates = {
     loading: "loading",
     playing: "playing",
@@ -21,10 +19,9 @@ export default function Quiz() {
   const [isFinished, setIsFinished] = useState(false);
   const [screenState, setScreenState] = useState(screenStates.loading);
   const [results, setResults] = useState([]);
-  const currentQuestion = db.questions[current];
+  const currentQuestion = data.questions[current];
   const currentQuestionIndex = current + 1;
-  const totalQuestions = db.questions.length;
-  const player = useRouter().query.name;
+  const totalQuestions = data.questions.length;
   const handleSubmit = (resposta) => {
     setResults([...results, resposta]);
     if (currentQuestionIndex + 1 > totalQuestions) {
@@ -44,7 +41,7 @@ export default function Quiz() {
   });
 
   return (
-    <BackgroundImage backgroundImage={db.bg}>
+    <BackgroundImage backgroundImage={data.bg}>
       <QuizContainer>
         <QuizLogo />
         <Widget>
@@ -54,13 +51,10 @@ export default function Quiz() {
               questionIndex={currentQuestionIndex}
               totalQuestions={totalQuestions}
               nextQuestion={handleSubmit}
-              player={player}
             />
           )}
           {screenState === screenStates.loading && <Loading />}
-          {screenState === screenStates.result && (
-            <Result result={results} player={player} />
-          )}
+          {screenState === screenStates.result && <Result result={results} />}
         </Widget>
       </QuizContainer>
     </BackgroundImage>

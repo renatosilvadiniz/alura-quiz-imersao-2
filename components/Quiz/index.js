@@ -2,11 +2,9 @@
 
 import Widget from "../Widget";
 import Button from "../Button";
-import QuizPlayer from "../Player";
 import QuizBack from "../Back";
 import styled from "styled-components";
 import { useState } from "react";
-
 
 const QuizImage = styled.div`
   background-image: url(${({ src }) => src});
@@ -32,7 +30,6 @@ export default function Questions({
   nextQuestion,
   questionIndex,
   totalQuestions,
-  player,
 }) {
   const [isDisabled, setIsDisabled] = useState(true);
   const [status, setStatus] = useState("submit");
@@ -51,10 +48,7 @@ export default function Questions({
     <>
       <Widget.Header>
         <QuizBack src="https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-ios7-arrow-back-512.png" />
-        <h1>
-          {`Pergunta ${questionIndex} de ${totalQuestions}`}
-          <QuizPlayer player={player} />
-        </h1>
+        <h1>{`Pergunta ${questionIndex} de ${totalQuestions}`}</h1>
       </Widget.Header>
       <QuizImage src={question.image} />
       <Widget.Content>

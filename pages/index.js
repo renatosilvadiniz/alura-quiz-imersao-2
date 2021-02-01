@@ -8,6 +8,7 @@ import QuizLogo from "../components/QuizLogo";
 import Footer from "../components/Footer";
 import GitHubCorner from "../components/GitHubCorner";
 import Form from "../components/Form";
+import { motion } from "framer-motion";
 
 function Home() {
   return (
@@ -17,7 +18,15 @@ function Home() {
       />
       <QuizContainer>
         <QuizLogo />
-        <Widget>
+        <Widget
+          as={motion.div}
+          variants={{
+            show: { opacity: 1 },
+            hidden: { opacity: 0 },
+          }}
+          initial="hidden"
+          animate="show"
+        >
           <Widget.Header>
             <h1>{db.title}</h1>
           </Widget.Header>
@@ -27,22 +36,45 @@ function Home() {
           </Widget.Content>
         </Widget>
 
-        <Widget>
+        <Widget
+          as={motion.div}
+          variants={{
+            show: { opacity: 1 },
+            hidden: { opacity: 0 },
+          }}
+          initial="hidden"
+          animate="show"
+        >
           <Widget.Content>
             <h1>{db.otherChallenges}</h1>
             <p>{db.otherChallengesDescription}</p>
-            <Widget.Quizzes href="https://google.com" target="_blank">
-              João
-            </Widget.Quizzes>
-            <Widget.Quizzes href="https://google.com" target="_blank">
-              Maria
-            </Widget.Quizzes>
-            <Widget.Quizzes href="https://google.com" target="_blank">
-              José
-            </Widget.Quizzes>
+            {db.external.map((link, index) => {
+              const [projectName, githubUser] = link
+                .replace(/\//g, "")
+                .replace("https:", "")
+                .replace(".vercel.app", "")
+                .split(".");
+              return (
+                <Widget.Quizzes
+                  key={index}
+                  href={`/quiz/${projectName}___${githubUser}`}
+                >
+                  {`${projectName}/${githubUser}`}
+                </Widget.Quizzes>
+              );
+            })}
           </Widget.Content>
         </Widget>
-        <Footer />
+        <Footer
+          as={motion.footer}
+          initial={{ rotate: 180, scale: 0 }}
+          animate={{ rotate: 0, scale: 1 }}
+          transition={{
+            type: "spring",
+            stiffness: 260,
+            damping: 20,
+          }}
+        />
       </QuizContainer>
     </BackgroundImage>
   );

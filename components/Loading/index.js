@@ -1,6 +1,7 @@
 /* eslint-disable */
 
 import Widget from "../Widget";
+import Loader from "./Loading";
 
 export default function Loading() {
   return (
@@ -8,8 +9,8 @@ export default function Loading() {
       <Widget.Header>
         <h1>Carregando...</h1>
       </Widget.Header>
-      <Widget.Content>
-        <h1>Carregando...</h1>
+      <Widget.Content style={{ "min-height": "250px", display: "flex" }}>
+        <Loader />
       </Widget.Content>
     </>
   );
